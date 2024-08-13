@@ -4,7 +4,7 @@ import Image from "next/image";
 import { menuItems, signout } from "@/app/(utils)/menuItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Navigation() {
+export default function Navigation({ active, setActive }) {
   return (
     <nav className={styles.navigation}>
       <div className={styles.user_container}>
@@ -22,7 +22,11 @@ export default function Navigation() {
       </div>
       <ul className={styles.menu_items}>
         {menuItems.map((item) => (
-          <li key={item.id}>
+          <li
+            key={item.id}
+            onClick={() => setActive(item.id)}
+            className={active === item.id ? styles.active : ""}
+          >
             <FontAwesomeIcon icon={item.icon} height={20} />
             <span>{item.title}</span>
           </li>
