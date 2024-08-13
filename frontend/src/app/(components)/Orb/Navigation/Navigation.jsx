@@ -1,20 +1,26 @@
 import React from "react";
 import styles from "./Navigation.module.css";
 import Image from "next/image";
-import { menuItems } from "@/app/(utils)/menuItems";
+import { menuItems, signout } from "@/app/(utils)/menuItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navigation() {
   return (
-    <nav className="navigation">
-      <div className="user-icon">
-        <Image src="/avatar.png" alt="avatar" height={150} width={150} />
-        <div>
-          <h2>Johnny</h2>
-          <p>Your Money</p>
+    <nav className={styles.navigation}>
+      <div className={styles.user_container}>
+        <Image
+          className={styles.user_icon}
+          src="/avatar.png"
+          alt="avatar"
+          height={100}
+          width={100}
+        />
+        <div className={styles.user_info}>
+          <h2>Patrycjusz</h2>
+          <p>Twoje środki</p>
         </div>
       </div>
-      <ul className="menu-items">
+      <ul className={styles.menu_items}>
         {menuItems.map((item) => (
           <li key={item.id}>
             <FontAwesomeIcon icon={item.icon} height={20} />
@@ -22,6 +28,16 @@ export default function Navigation() {
           </li>
         ))}
       </ul>
+      <div>
+        <ul className={styles.menu_items}>
+          {signout.map((item) => (
+            <li key={item.id}>
+              <FontAwesomeIcon icon={item.icon} height={20} />
+              <span>{item.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }

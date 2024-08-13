@@ -1,4 +1,3 @@
-import { dashboard, expenses, transactions, trend } from "./Icons";
 import {
   faChartLine,
   faMoneyBillTransfer,
@@ -32,8 +31,11 @@ export const menuItems = [
     icon: faMoneyBillTrendUp,
     link: "/dashboard",
   },
+];
+
+export const signout = [
   {
-    id: 5,
+    id: 1,
     title: "Wyloguj",
     icon: faRightFromBracket,
     link: "/dashboard",
