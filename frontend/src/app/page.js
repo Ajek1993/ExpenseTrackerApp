@@ -1,3 +1,4 @@
+import Navigation from "./(components)/Orb/Navigation/Navigation";
 import Orb from "./(components)/Orb/Orb";
 import styles from "./page.module.css";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Orb />
       <div className={styles.mainLayout}>
+        <Navigation />
         {/* <div className={styles.innerLayout}></div> */}
       </div>
     </>
