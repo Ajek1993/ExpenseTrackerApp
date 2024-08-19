@@ -5,11 +5,14 @@ import Expenses from "./(components)/Expenses/Expenses";
 import Incomes from "./(components)/Incomes/Incomes";
 import Navigation from "./(components)/Navigation/Navigation";
 import Orb from "./(components)/Orb/Orb";
+import { useGlobalContext } from "./(context)/globalContext";
 import styles from "./page.module.css";
 import { useState } from "react";
 
 export default function Home() {
   const [active, setActive] = useState(1);
+
+  const global = useGlobalContext();
 
   const displayData = () => {
     switch (active) {
