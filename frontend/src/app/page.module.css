@@ -9,3 +9,17 @@
   padding: 2rem 1.5rem;
   width: 100%;
 }
+
+.main_container {
+  flex: 1;
+  background: rgba(252, 246, 249, 0.78);
+  border: 3px solid #ffffff;
+  backdrop-filter: blur(4.5px);
+  border-radius: 32px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.main_container::-webkit-scrollbar {
+  width: 0;
+}
