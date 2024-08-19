@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "'styled-components'";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Button({ name, icon, onClick, bg, bPad, color, bRad }) {
   return (
@@ -12,7 +13,7 @@ function Button({ name, icon, onClick, bg, bPad, color, bRad }) {
       }}
       onClick={onClick}
     >
-      {icon}
+      <FontAwesomeIcon icon={icon} />
       {name}
     </ButtonStyled>
   );

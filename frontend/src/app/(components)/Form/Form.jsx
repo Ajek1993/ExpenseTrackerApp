@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.module.css";
+import "react-datepicker/dist/react-datepicker.css";
 import { useGlobalContext } from "@/app/(context)/globalContext";
+import Button from "../Button/Button";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function Form() {
   const { addIncome } = useGlobalContext();
@@ -26,9 +28,10 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="input_control">
+    <form className={styles.income_form} onSubmit={handleSubmit}>
+      <div className={styles.input_control}>
         <input
+          className={styles.income_form_input}
           type="text"
           value={title}
           name="title"
@@ -36,8 +39,9 @@ export default function Form() {
           onChange={handleInput("title")}
         />
       </div>
-      <div className="input_control">
+      <div className={styles.input_control}>
         <input
+          className={styles.income_form_input}
           type="text"
           value={amount}
           name="amount"
@@ -45,7 +49,7 @@ export default function Form() {
           onChange={handleInput("amount")}
         />
       </div>
-      <div className="input_control">
+      <div className={styles.input_control}>
         <DatePicker
           id="date"
           placeholderText="Podaj datę"
@@ -56,8 +60,9 @@ export default function Form() {
           }}
         />
       </div>
-      <div className="selects input-control">
+      <div className={`${styles.selects} ${styles.input_control}`}>
         <select
+          className={styles.income_form_select}
           required
           value={category}
           name="category"
@@ -77,8 +82,9 @@ export default function Form() {
           <option value="other">Other</option>
         </select>
       </div>
-      <div className="input-control">
+      <div className={styles.input_control}>
         <textarea
+          className={styles.income_form_input}
           name="description"
           value={description}
           placeholder="Add A Reference"
@@ -91,7 +97,7 @@ export default function Form() {
       <div className="submit-btn">
         <Button
           name={"Add Income"}
-          icon={plus}
+          icon={faPlus}
           bPad={".8rem 1.6rem"}
           bRad={"30px"}
           bg={"var(--color-accent"}
