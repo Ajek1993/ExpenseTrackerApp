@@ -5,7 +5,8 @@
 }
 
 .income_form_input,
-.income_form_select {
+.income_form_select,
+.income_form_textarea {
   font-family: inherit;
   font-size: inherit;
   outline: none;
@@ -20,7 +21,8 @@
 }
 
 .income_form_input::placeholder,
-.income_form_select::placeholder {
+.income_form_select::placeholder,
+.income_form_textarea::placeholder {
   color: rgba(34, 34, 96, 0.4);
 }
 
@@ -35,8 +37,17 @@
 
 .selects select {
   color: rgba(34, 34, 96, 0.4);
-  &:focus,
-  &:active {
-    color: rgba(34, 34, 96, 1);
-  }
+}
+
+.selects select:focus,
+.selects select:active {
+  color: rgba(34, 34, 96, 1);
+}
+
+.submit_btn button {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+}
+
+.submit_btn button:hover {
+  background: var(--color-green) !important;
 }

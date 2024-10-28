@@ -87,16 +87,16 @@ export default function Form() {
           className={styles.income_form_input}
           name="description"
           value={description}
-          placeholder="Add A Reference"
+          placeholder="Opis..."
           id="description"
           cols="30"
           rows="4"
           onChange={handleInput("description")}
         ></textarea>
       </div>
-      <div className="submit-btn">
+      <div className={styles.submit_btn}>
         <Button
-          name={"Add Income"}
+          name={"Dodaj wydatek"}
           icon={faPlus}
           bPad={".8rem 1.6rem"}
           bRad={"30px"}
